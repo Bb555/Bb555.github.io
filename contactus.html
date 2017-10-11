@@ -1,45 +1,79 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
 
-  <title>Mobile Mania</title>
-  <meta name="description" content="HTML5 Template">
-  <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="utf-8">
+
+    <title>Mobile Mania</title>
+    <meta name="description" content="HTML5 Template">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-        <h1>Mobile Mania</h1>
-        <h2>Contact Us</h2>
-        <p>If you have any queries and sugggestion, Please use the following form to contact us. Our experts will contact
-            you as soon as possible with the best possible solution.
+    <header>
+        <div class="header">
+            <img src="mobile-mania-logo.png" style="width:100px; height:100px" />
+            <h1>Mobile Mania</h1>
+            <h2>Contact Us</h2>
+        </div>
+    </header>
+    <!-- 
+            <h1><a href="index.htm">Go To HOME</a></h1> -->
+    <div class="menu">
+
+        <table>
+            <th>MENU</th>
+            <tr>
+                <td><a href="index.htm">Home</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="iphone.htm">Iphone</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="samsung.htm">Samsung</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="contactus.html">Contact Us</a></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="areabody">
+        <p>If you have any queries and sugggestion, Please use the following form to contact us. Our experts will contact you
+            as soon as possible with the best possible solution.
         </p>
-    <form action="">
-        <input type="text" name="firstName" id="firstName" placeholder="Enter First Name"/>
+        <form action="">
+            <input type="text" name="firstName" id="firstName" placeholder="Enter First Name" />
 
-        <br/>
-        <br/>
-        <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name"/>
-        <br/>
-        <br/>
-        <input type="email" name="email" id="email" placeholder="Enter Email Address"/>
-        <br/>
-        <br/>
-        <input type="radio" name="issue" id="issue" value="Question"/>Question<br/>
+            <br/>
+            <br/>
+            <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name" />
+            <br/>
+            <br/>
+            <input type="email" name="email" id="email" placeholder="Enter Email Address" />
+            <br/>
+            <br/>
+            <input type="radio" name="issue" id="issue" value="Question" />Question<br/>
 
-        <input type="radio" name="issue" id="issue" value="Problem"/>Problem<br/>
+            <input type="radio" name="issue" id="issue" value="Problem" />Problem<br/>
 
-        <input type="radio" name="issue" id="issue" value="Order"/>Order Status Update<br/>
+            <input type="radio" name="issue" id="issue" value="Order" />Order Status Update<br/>
 
-        <br/>
-        <textarea name="comment" id="comment" rows="4" cols="50" placeholder="Comment Box"></textarea>
-        <br/>
-        <button type="reset" onclick="reset()">Reset</button>
-        <button type="submit" >Submit</button>
+            <br/>
+            <textarea name="comment" id="comment" rows="4" cols="50" placeholder="Comment Box"></textarea>
+            <br/>
+            <button type="reset" onclick="reset()">Reset</button>
+            <button type="submit">Submit</button>
 
-    </form>
-    <h4><a href="index.htm">Go To HOME</a></h4>
+        </form>
+    </div>
+
 </body>
+
 </html>
