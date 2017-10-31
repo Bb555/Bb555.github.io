@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="dateFunc()">
     <header>
       <div class="header">
         <img src="mobile-mania-logo.png" style="width:100px; height:100px" />
@@ -81,6 +81,21 @@
     
   </table>
     </div>
+
+    <footer>
+        <div id="date">
+        </div>
+    </footer>
+    <script>
+    function dateFunc() {
+      debugger
+      var date = new Date();
+      var day = date.getDate();
+      var month = date.getMonth();
+      var year = date.getFullYear();
+      document.getElementById('date').innerHTML = 'Today is ' + day + '/' + (month+1) + '/' + year;
+    }
+    </script>
   </body>
 </html>
 

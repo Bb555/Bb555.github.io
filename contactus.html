@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body onload="dateFunc()">
     <header>
         <div class="header">
             <img src="mobile-mania-logo.png" style="width:100px; height:100px" />
@@ -48,7 +48,7 @@
         <p>If you have any queries and sugggestion, Please use the following form to contact us. Our experts will contact you
             as soon as possible with the best possible solution.
         </p>
-        <form action="">
+        <form name="form" id="form" action="GET" onsubmit="return Validate()">
             <input type="text" name="firstName" id="firstName" placeholder="Enter First Name" />
 
             <br/>
@@ -73,6 +73,66 @@
 
         </form>
     </div>
+    <footer>
+        <div id="date">
+        </div>
+    </footer>
+
+
+    <script>
+        function Validate() {
+            debugger
+
+            var firstName = document.forms["form"]["firstName"].value;
+            var lastName = document.forms["form"]["lastName"].value;
+            var email = document.forms["form"]["email"].value;
+            var issue = document.forms["form"]["issue"].value;
+            var comment = document.forms["form"]["comment"].value;
+            var flag = true;
+            var errMsg = '';
+            var isTrue = new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$').test(email);
+            if (!new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$').test(email)) {
+                errMsg += 'Invalid Email or email should not be empty';
+                flag = false;
+            }
+            if (firstName == '') {
+                errMsg += '\nFirst Name is empty';
+                flag = false;
+            }
+
+            if (lastName == '') {
+                errMsg += '\nLast Name is empty';
+                flag = false;
+            }
+
+            if (issue == '') {
+                errMsg += '\nMust select any issue';
+                flag = false;
+            }
+            if (comment == '') {
+                errMsg += '\nComments are mandatory';
+                flag = false;
+            }
+            if (comment.length < 20) {
+                errMsg += '\nComments should be greater than 20 characters.';
+                flag = false;
+            }
+
+            if (!flag) {
+                alert(errMsg);
+                return false;
+            }
+        }
+
+        function dateFunc() {
+            debugger
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth();
+            var year = date.getFullYear();
+            document.getElementById('date').innerHTML = 'Today is ' + day + '/' + (month+1) + '/' + year;
+        }
+    </script>
 
 </body>
 

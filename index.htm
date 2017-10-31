@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="dateFunc()">
 
 <header>
     <div class="header">
@@ -50,7 +50,20 @@
     
     <!-- <h1><a href="index.htm">Go To HOME</a></h1> -->
 </div>
-
+<footer>
+    <div id="date">
+    </div>
+</footer>
+<script>
+function dateFunc() {
+  debugger
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth();
+  var year = date.getFullYear();
+  document.getElementById('date').innerHTML = 'Today is ' + day + '/' + (month+1) + '/' + year;
+}
+</script>
 
 
 </body>
