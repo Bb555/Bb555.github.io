@@ -21,8 +21,8 @@
     <!-- 
   <h1><a href="index.htm">Go To HOME</a></h1> -->
     <div class="menu">
-  
-      <table>
+      <button id="menuButton" onclick="showHide()">MENU</button>
+      <table id="menu">
         <th>MENU</th>
         <tr>
           <td><a href="index.htm">Home</a></td>
@@ -94,7 +94,21 @@
       var month = date.getMonth();
       var year = date.getFullYear();
       document.getElementById('date').innerHTML = 'Today is ' + day + '/' + (month+1) + '/' + year;
+      document.getElementById('menu').style.visibility = 'hidden';
     }
+    
+    function showHide() {
+          
+          if(document.getElementById('menu').style.visibility == 'hidden')
+          {
+            document.getElementById('menu').style.visibility = 'visible';
+          }
+          else
+          {
+            document.getElementById('menu').style.visibility = 'hidden';
+          }
+    
+        }
     </script>
   </body>
 </html>
