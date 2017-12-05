@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #container {
+        width: 100%;
+        height: 60px;
+        position: relative;
+    }
+
+    #container1 {
+        margin-top: 100px;
+        width: 100%;
+        height: 60px;
+        position: relative;
+    }
+
+    #animate {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        /* background-color: red; */
+    }
+
+    #animate1 {
+        margin-top: 30px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        /* background-color: blue; */
+    }
+    #signal {
+        margin-top: 100px;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        background-color: green;
+    }
+</style>
+
+<body>
+
+        <div>
+                <button id = "btn" style="color:green;" onclick="myMove()">Race</button>
+        </div>
+    <!-- <div style="display: inline-block;"> -->
+        
+            <div id="container">
+                <img id="animate" src="car1.png"></img>
+                <!-- <div id ="animate"></div> -->
+            </div>
+
+            <div id="container">
+
+                <img id="animate1" src="car2.png"></img>
+                <!-- <div id ="animate1"></div> -->
+            </div>
+        
+            <div id="signal"></div>
+        
+        <!-- <div>
+                <img src="finishLine.png" width="50px" height="200px" />
+            </div> -->
+    <!-- </div> -->
+
+    
+
+    <script>
+        function myMove() {
+            
+            debugger
+            document.getElementById("btn").disabled = true;
+            document.getElementById("signal").style.background='red';
+            var elem = document.getElementById("animate");
+            var elem1 = document.getElementById("animate1");
+            var ctrWidth = document.getElementById("container").offsetWidth * 0.80;
+            var pos = 0;
+            var pos1 = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos >= ctrWidth) {
+                    document.getElementById("btn").disabled = false;
+                    document.getElementById("signal").style.background='green';
+                    elem.style.left = ctrWidth + 'px';
+                    alert("Black car won");
+                    clearInterval(id);
+                }
+                else if (pos1 >= ctrWidth) {
+                    document.getElementById("btn").disabled = false;
+                    document.getElementById("signal").style.background='green';
+                    elem1.style.left = ctrWidth + 'px';
+                    alert("Red car won");
+                    clearInterval(id);
+                }
+                else {
+                    Math.random()
+                    pos = pos + getRandomNo();
+                    pos1 = pos1 + getRandomNo();
+                    //elem.style.top = pos + 'px'; 
+                    elem.style.left = pos + 'px';
+                    elem1.style.left = pos1 + 'px';
+                }
+            }
+        }
+
+        function getRandomNo() {
+            return Math.random() * (5 - 1) + 1;
+        }
+    </script>
+
+</body>
+
+</html>
